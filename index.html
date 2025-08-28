@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Program Operation Shenanigans</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+        <style>
+            .instrument-serif-regular {
+                    font-family: "Instrument Serif", serif;
+                    font-weight: 400;
+                    font-style: normal;
+            }
+
+            .instrument-serif-regular-italic {
+                font-family: "Instrument Serif", serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            
+
+            html {
+                /* Aside from the headers, all the text on the webpage is in Arial*/
+                font-family:'Instrument Serif', sans-serif;
+                text-align: center;
+                background-color: #E3FF00;
+            }
+
+
+            body, h1, h3, header {
+                /* No margins or paddings defaulted*/
+                margin: 0;
+                padding: 0;
+                
+            }
+
+            h1 {
+                /* All h1 text is in the custom */
+                font-family: 'Instrument Serif', sans-serif;
+                font-size: 4em;
+            
+            }
+
+            h2 {
+                font-size: 2em;
+                line-height: 1;
+               
+            }
+
+            h3 {
+                font-size: 1.5em;
+                line-height: 1;
+            }
+
+
+            p{
+                font-size: 1.5em;
+                color:#373502;
+                text-align: left;
+                
+            }
+
+            img{
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: center;
+                max-width: 90%;
+                height: auto;
+            }
+
+
+            .container {
+                display: grid;
+                grid-template-areas: 
+                "header header countdown" 
+                "main main main"
+                "footer footer footer";
+                grid-template-rows: 1fr 4fr 1fr;
+                grid-template-columns: 2fr 2fr 1fr;
+                height: 100vh;
+            }
+
+
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            .flex-container > div {
+                flex: 2; /* Distributes space evenly */
+                max-width: 800px;
+                min-width: 200px; /* Prevents content from shrinking too much */
+                flex: 1 1 calc(50% - 20px);
+                box-sizing: border-box;
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+            }
+            
+            .flex-container img {
+                padding-top: 1em;
+                max-width: 100%; /* Makes image responsive */
+                height: auto; /* Maintains aspect ratio */
+            }
+
+            header, footer{
+                grid-area: header;
+                color:#E3FF00;
+                position: sticky;
+                background-color: rgb(1, 95, 69);
+                top: 0;
+                
+
+            }
+            figcaption {
+                color: #1d1c21;
+            }
+
+             .countdown {
+                grid-area: countdown;
+                color: #1d1c21;
+                position: sticky;
+                padding: 1em;
+                background-color: #0ce95d;
+                top: 0;
+
+            }
+
+            .red {
+                background-color: #E3FF00;
+            }
+
+            .text {
+                padding: 5em;
+            }
+
+            main {
+                grid-area: main;
+            }
+
+            main a {
+                color:#6461A0;
+            }
+
+        
+            footer {
+                grid-area: footer;
+                /*background-color: lightgray;*/
+                text-align: center;
+            }
+
+            /* MOBILE media queries*/
+            @media (max-width: 768px){
+                 .text {
+                    padding: 1em; /* or less for mobile */
+                  }
+                .container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr  auto  1fr ;
+                    grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "footer";
+                }
+
+                /*on mobile view, the nav bar icon is visible*/
+                .nav-display{
+                    display: inline;
+                }
+                /*on the mobile view, the nav bar links are not shown unless the nav bar icon is toggled*/
+                .links{
+                    display:none;
+                }
+
+
+                h1 {
+                    font-size: 1.3em;
+                }
+
+                h2 {
+                    font-size: 1em;
+                }
+
+                h3 {
+                    font-size: 1em;
+                }
+
+                p{
+                    font-size: 1em;
+                    text-align: center;
+                }
+
+                main{
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                header {
+                    padding: 10px;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000; /* Ensure it's above other content */
+                }
+               
+                .flex-container img {
+                    max-width: 100%;
+                    height: auto;
+                        
+                }
+                .countdown{
+                grid-area: nav;
+                color: black;
+                position: sticky;
+                background-color:  #E3FF00;
+                top: 6.6em;
+                display: block;
+                transition: top 0.3s;
+                
+                }
+
+                .flex-container > div {
+                flex: 2; /* Distributes space evenly */
+                max-width: 800px;
+                min-width: 200px; /* Prevents content from shrinking too much */
+                flex: 1 1 calc(100% - 20px);
+                box-sizing: border-box;
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+            }
+            
+            }
+        </style>
+    </head>
+
+    
+    <body>
+        <div class="container">
+            <header>
+                <h1>✨Program Operation Shenanigans✨</br> </h1>
+                <h3>A collection of all of Kayley & Emily's program operation intern memories!</h3>
+            </header>
+            <div class="countdown">
+                <h2 style="background-color: #0ce95d;" id = "countdown">Enjoy Kariann & Ella!</h2>
+            </div>
+
+            <main>
+                <div class="flex-container">
+                    <div class = "flex-item">
+                        <img 
+                            src="Kariann.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="Program Ops Paper Plate Awards!.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="day1scaries.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="GOAT.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    
+                    <div class = "flex-item">
+                        <img 
+                            src="passingofthetorch.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    
+                    <div class = "flex-item">
+                        <img 
+                            src="programopsfamily.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="wanted.png" 
+                            height="auto" 
+                            >
+                    </div>
+
+                    <div class = "flex-item">
+                        <img 
+                            src="kariann_sunset.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="Screenshot 2025-08-28 at 4.06.46 PM.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="Screenshot 2025-08-28 at 4.08.39 PM.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="Screenshot 2025-08-28 at 4.09.32 PM.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    <div class = "flex-item">
+                        <img 
+                            src="Screenshot 2025-08-28 at 4.14.01 PM.png" 
+                            height="auto" 
+                            >
+                    </div>
+                    
+            </div>
+                    
+                
+                
+            </main>
+        
+            <footer>
+                <h4>All from the mind and heart of Kayley Chery  </h4>
+            </footer>
+
+        </div>
+    </body>
+   
+
+    
+</html>
